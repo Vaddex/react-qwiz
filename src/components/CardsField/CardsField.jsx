@@ -1,3 +1,5 @@
+import css from "./CardsField.module.css";
+
 import { useState } from "react";
 
 const questions = [
@@ -21,27 +23,44 @@ const questions = [
 function CardsField() {
     const [selectedQuestion, setSelectedQuestion] = useState(null); // Placeholder for future state management
 
+    const [showAnswer, setShowAnswer] = useState(false); // Placeholder for future state management
+
     const openPopup = (question) => {
         setSelectedQuestion(question);
+        setShowAnswer(false);
     };
 
     const closePopup = () => {
         setSelectedQuestion(null);
+        setShowAnswer(false);
+    };
+
+    const toggleAnswer = () => {
+        setShowAnswer(!showAnswer);
     };
 
     return (
-        <div className="cards-field">
-            <div className="cards-container">
-                {questions.map((q) => (
-                    <div
-                        key={q.id}
-                        className="card"
-                        onClick={() => openPopup(q)}
-                    >
-                        <h3>{q.title}</h3>
-                    </div>
-                ))}
-            </div>
+        <div className={css["cards-field"]}>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Дія</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {questions.map((q) => (
+                        <tr key={q.id}>
+                            <td>{q.title}</td>
+                            <td>
+                                <button onClick={() => openPopup(q)}>
+                                    Відкрити запитання
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
 
             {selectedQuestion && (
                 <div className="popup-overlay" onClick={closePopup}>
@@ -49,11 +68,25 @@ function CardsField() {
                         className="popup-content"
                         onClick={(e) => e.stopPropagation()}
                     >
+                        <h2>{selectedQuestion.title}</h2>
+                        <p>
+                            <strong>Запитання:</strong>{" "}
+                            {selectedQuestion.question}
+                        </p>
+                        <button onClick={toggleAnswer}>
+                            {showAnswer
+                                ? "Сховати відповідь"
+                                : "Показати відповідь"}
+                        </button>
+                        {showAnswer && (
+                            <div className="answer-card">
+                                <p>{selectedQuestion.answer}</p>
+                            </div>
+                        )}
+
                         <button className="close-btn" onClick={closePopup}>
                             Закрити
                         </button>
-                        <h2>{selectedQuestion.title}</h2>
-                        <p>{selectedQuestion.content}</p>
                     </div>
                 </div>
             )}
