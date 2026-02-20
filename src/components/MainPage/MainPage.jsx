@@ -1,15 +1,28 @@
 import css from "./MainPage.module.css";
+import CategoryCarousel from "../CategoryCarousel/CategoryCarousel";
 function MainPage() {
     return (
         <div className={css["container"]}>
             <h1 className={css["topSign"]}>Welcome to the Main Page</h1>
             <p className={css["description"]}>
-                [test text] Quick, free film quiz to challenge your knowledge.
-                Instant results. Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Ipsam consectetur modi unde optio culpa.
-                Voluptate beatae delectus iusto. Id eaque et molestias ad
-                veniam. Eius labore illum explicabo minus neque. [test text]
+                Цей сайт — це твій персональний кіноквіз, який перетворює
+                перевірку знань про фільми на захопливу гру. Тут ти зможеш
+                швидко і безкоштовно протестувати свої знання, змагатися з
+                друзями та відкривати нові цікаві факти про улюблені жанри та
+                стрічки. Кожне запитання — це маленька пригода у світ кіно, яка
+                допоможе тобі краще розуміти кінематограф і розширити свій
+                кругозір.
             </p>
+
+            <p className={css["description"]}>
+                Наш кіноквіз створений для того, щоб дарувати радість від
+                навчання і розваг одночасно. Інтуїтивний інтерфейс, миттєві
+                результати та різноманітність категорій зроблять твою гру
+                цікавою і динамічною. Приєднуйся, перевіряй свої знання і
+                насолоджуйся атмосферою справжнього кіномарафону!
+            </p>
+
+            <CategoryCarousel />
         </div>
     );
 }
