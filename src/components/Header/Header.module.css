@@ -1,0 +1,50 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #190020;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 2px 4px rgba(108, 3, 117, 0.1);
+}
+
+.headerLeft,
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.headerTitle {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.headerBtn {
+    padding: 10px 40px;
+    background-color: #2f1270;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.headerBtn:hover {
+    background-color: #510253;
+}
+
+.pageContent {
+    padding-top: 60px; /* Adjust this value based on the header height */
+}
