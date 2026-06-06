@@ -48,6 +48,7 @@ function CardsField() {
                 <thead>
                     <tr>
                         <th>Назва</th>
+                        <th>складність</th>
                         <th>Дія</th>
                     </tr>
                 </thead>
