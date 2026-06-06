@@ -67,9 +67,9 @@ function CardsField() {
             </table>
 
             {selectedQuestion && (
-                <div className="popup-overlay" onClick={closePopup}>
+                <div className={css["popup-overlay"]} onClick={closePopup}>
                     <div
-                        className="popup-content"
+                        className={css["popup-content"]}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <h2>{selectedQuestion.title}</h2>
