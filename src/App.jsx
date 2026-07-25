@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import CardsField from "./components/CardsField/CardsField";
 import MainPage from "./components/MainPage/MainPage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <Header />
             <MainPage />
             <CardsField />
+            <Footer />
         </>
     );
 }
