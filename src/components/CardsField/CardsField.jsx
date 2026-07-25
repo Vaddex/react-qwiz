@@ -47,9 +47,9 @@ function CardsField() {
             <table>
                 <thead>
                     <tr>
-                        <th>Назва</th>
-                        <th>складність</th>
-                        <th>Дія</th>
+                        <th>Категорія</th>
+                        <th>Відкрити відповідь</th>
+                        <th>Складність</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,7 +58,7 @@ function CardsField() {
                             <td>{q.title}</td>
                             <td>
                                 <button onClick={() => openPopup(q)}>
-                                    Відкрити запитання
+                                    Відкрити відповідь
                                 </button>
                             </td>
                         </tr>
